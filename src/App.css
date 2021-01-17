@@ -16,6 +16,7 @@
 h1 {
   margin: 0;
   color: white;
+  font-weight: 700;
 }
 
 .quiz__modal {
@@ -28,20 +29,36 @@ h1 {
 
 h3 {
   margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
   margin-bottom: 32px;
   text-align: justify;
+  color: hsl(212,44.7%,33.3%);
 }
 
 .quiz__modal > ul {
   margin: 0;
   padding: 0;
+  font-weight: 500;
+  list-style-type: none;
 }
 
 .quiz__modal ul li {
-  /*height: 56px;*/
-  margin-bottom: 31px
+  width: 400px;
+  height: 56px;
+  font-size: 18px;
+  line-height: 56px;
+  margin-bottom: 31px;
+  border-radius: 12px;
+  color: hsla(236.8, 54.4%, 59.6%, .8);
+  border: 2px solid hsla(236.8, 54.4%, 59.6%, .7);
 }
 
 .quiz__modal ul li:first-child {
   margin-bottom: 25px;
+}
+
+.quiz__modal ul li:last-child {
+  margin-bottom: 0;
 }
