@@ -47,6 +47,7 @@ h3 {
 .quiz__modal ul li {
   width: 400px;
   height: 56px;
+  cursor: pointer;
   font-size: 18px;
   line-height: 56px;
   margin-bottom: 31px;
@@ -61,4 +62,10 @@ h3 {
 
 .quiz__modal ul li:last-child {
   margin-bottom: 0;
+}
+
+.quiz__modal ul li:hover {
+  color: white;
+  border-color: #F9A826;
+  background-color: #F9A826;
 }
