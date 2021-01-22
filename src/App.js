@@ -18,7 +18,6 @@ function App() {
             <li>Argentina</li>
             <li>Venezuela</li>
             <li>Honduras</li>
-            <li>Otro pais</li>
           </ul>
         </div>
       </main>
