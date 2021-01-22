@@ -20,9 +20,9 @@ h1 {
 }
 
 .quiz__modal {
-  padding: 68px 32px;
+  padding: 4.25em 2em;
   text-align: center;
-  border-radius: 24px;
+  border-radius: 1.5em;
   box-sizing: border-box;
   position: relative;
   background-color: white;
@@ -30,10 +30,10 @@ h1 {
 
 h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 700;
-  line-height: 36px;
-  margin-bottom: 32px;
+  line-height: 1.5em;
+  margin-bottom: 1.3334em;
   text-align: justify;
   color: hsl(212,44.7%,33.3%);
 }
@@ -43,22 +43,23 @@ h3 {
   padding: 0;
   font-weight: 500;
   list-style-type: none;
+  box-sizing: border-box;
 }
 
 .quiz__modal ul li {
-  width: 400px;
-  height: 56px;
+  width: 22.2222em;
+  height: 3.1111em;
   cursor: pointer;
-  font-size: 18px;
-  line-height: 56px;
-  margin-bottom: 31px;
-  border-radius: 12px;
+  font-size: 1.125em;
+  line-height: 3.1111em;
+  margin-bottom: 1.7222em;
+  border-radius: 0.6667em;
   color: hsla(236.8, 54.4%, 59.6%, .8);
-  border: 2px solid hsla(236.8, 54.4%, 59.6%, .7);
+  border: .1111em solid hsla(236.8, 54.4%, 59.6%, .7);
 }
 
 .quiz__modal ul li:first-child {
-  margin-bottom: 25px;
+  margin-bottom: 1.3889em;
 }
 
 .quiz__modal ul li:last-child {
@@ -74,5 +75,5 @@ h3 {
 .quiz__img {
   position: absolute;
   right: 0;
-  top: -75px;
+  top: -4.6875em;
 }
