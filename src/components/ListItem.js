@@ -1,9 +1,12 @@
 import React from 'react'
 import './ListItem.css'
 
-const ListItem = ({country}) => {
+const ListItem = ({text, changeGameMode, gameMode}) => {
+  const handleChangeMode = () => {
+    changeGameMode(gameMode)
+  }
   return(
-    <li className="list__item">{country}</li>
+    <li className="list__item" onClick={handleChangeMode}>{text}</li>
   )
 }
 
