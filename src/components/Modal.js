@@ -1,4 +1,5 @@
 import React from 'react'
+import QuizList from './QuizList'
 import './Modal.css'
 
 const Modal = (props) => {
@@ -11,12 +12,7 @@ const Modal = (props) => {
         width="162px"
       />
       <h3>Caracas is the capital of</h3>
-      <ul>
-        <li>Colombia</li>
-        <li>Argentina</li>
-        <li>Venezuela</li>
-        <li>Honduras</li>
-      </ul>
+      <QuizList />
     </div>
   )
 }
