@@ -9,15 +9,24 @@ const Modal = (props) => {
   const [isLoading, setIsLoading] = useState(false)
   const [query, setQuery] = useState(false)
   const [data, setData] = useState({name: '', capital: ''})
+  const [options, setOptions] = useState([])
 
   useEffect(() => {
     if (query === false) return
-    const fetchData = async () => {
-      const countryCode = randomCountry()
-      const res = await fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
-      const country = await res.json()
 
-      setData({name: country.name, capital: country.capital})
+    const fetchData = async () => {
+      const CODES = randomCountry()
+      const URL = `https://restcountries.eu/rest/v2/alpha?codes=${CODES[0]};${CODES[1]};${CODES[2]};${CODES[3]}`
+      const res = await fetch(URL)
+      const countries = await res.json()
+
+      const wrongCountries = []
+      for (let i = 0; i < countries.length; i++) {
+        wrongCountries.push(countries[i].name)
+      }
+
+      setData({name: countries[0].name, capital: countries[0].capital})
+      setOptions([...wrongCountries])
       setQuery(false)
       setIsLoading(false)
     }
