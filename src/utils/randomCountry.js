@@ -1,4 +1,4 @@
-const countries = ["AFG", "ALA", "ALB", "DZA", "ASM", "AND", "AGO", "AIA", "ATA", "ATG",
+const COUNTRIES = ["AFG", "ALA", "ALB", "DZA", "ASM", "AND", "AGO", "AIA", "ATA", "ATG",
   "ARG", "ARM", "ABW", "AUS", "AUT", "AZE", "BHS", "BHR", "BGD", "BRB", "BLR", "BEL",
   "BLZ", "BEN", "BMU", "BTN", "BOL", "BES", "BIH", "BWA", "BVT", "BRA", "IOT", "BRN",
   "BGR", "BFA", "BDI", "CPV", "KHM", "CMR", "CAN", "CYM", "CAF", "TCD", "CHL", "CHN",
@@ -21,6 +21,10 @@ const countries = ["AFG", "ALA", "ALB", "DZA", "ASM", "AND", "AGO", "AIA", "ATA"
   "UZB", "VUT", "VEN", "VNM", "VGB", "VIR", "WLF", "ESH", "YEM", "ZMB", "ZWE"]
 
 export default function randomCountry() {
-  const random = Math.floor(Math.random() * (countries.length - 1))
-  return countries[random]
+  const multipleCountries = []
+  for (let i = 0; i < 4; i++) {
+    const random = Math.floor(Math.random() * (COUNTRIES.length - 1))
+    multipleCountries.push(COUNTRIES[random])
+  }
+  return multipleCountries
 }
