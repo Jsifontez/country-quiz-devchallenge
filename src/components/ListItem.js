@@ -3,7 +3,9 @@ import './ListItem.css'
 
 const ListItem = ({text, changeGameMode, gameMode}) => {
   const handleChangeMode = () => {
-    changeGameMode(gameMode)
+    if(changeGameMode) {
+      changeGameMode(gameMode)
+    }
   }
   return(
     <li className="list__item" onClick={handleChangeMode}>{text}</li>

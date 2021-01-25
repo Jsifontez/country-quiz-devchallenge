@@ -49,7 +49,7 @@ const Modal = (props) => {
         width="162px"
       />
       <Quiz gameMode={gameMode} isLoading={isLoading} quiz={data} />
-      <QuizList changeGameMode={changeGameMode}/>
+      <QuizList changeGameMode={changeGameMode} items={options}/>
     </div>
   )
 }
