@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import QuizList from './QuizList'
+import Quiz from './Quiz'
 import './Modal.css'
 import randomCountry from '../utils/randomCountry'
 
 const Modal = (props) => {
-  const [gameMode, setGameMode ] = useState("Select game mode")
+  const [gameMode, setGameMode ] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [query, setQuery] = useState(false)
   const [data, setData] = useState({name: '', capital: ''})
@@ -18,6 +19,7 @@ const Modal = (props) => {
 
       setData({name: country.name, capital: country.capital})
       setQuery(false)
+      setIsLoading(false)
     }
 
     fetchData()
@@ -29,14 +31,6 @@ const Modal = (props) => {
     setQuery(true)
   }
 
-  let quiz;
-  
-  if (gameMode !== "Select game mode") {
-    quiz = <h3>Loading {gameMode} of... quiz...</h3>
-  } else {
-    quiz = <h3>{gameMode}</h3>
-  }
-
   return(
     <div className="modal">
       <img
@@ -45,7 +39,7 @@ const Modal = (props) => {
         alt="A man with a world on the side"
         width="162px"
       />
-      {quiz}
+      <Quiz gameMode={gameMode} isLoading={isLoading} quiz={data} />
       <QuizList changeGameMode={changeGameMode}/>
     </div>
   )
