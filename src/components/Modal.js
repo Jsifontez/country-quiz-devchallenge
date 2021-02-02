@@ -40,6 +40,26 @@ const Modal = (props) => {
     setQuery(true)
   }
 
+  // a function to handle de correct choice in options
+  const handleChoice = (choice, el) => {
+
+    if(choice === data.name) {
+      el.classList.add("answer--correct")
+      return
+    } else (
+      el.classList.add("answer--wrong")
+    )
+
+    // I need iterate over all list elements
+    const listItems = el.parentElement.children
+
+    for (let i = 0; i < listItems.length; i++) {
+      if (listItems[i].innerHTML === data.name) {
+        listItems[i].classList.add("answer--correct")
+      }
+    }
+  }
+
   return(
     <div className="modal">
       <img
@@ -49,7 +69,12 @@ const Modal = (props) => {
         width="162px"
       />
       <Quiz gameMode={gameMode} isLoading={isLoading} quiz={data} />
-      <QuizList changeGameMode={changeGameMode} items={options}/>
+      <QuizList
+        changeGameMode={changeGameMode}
+        items={options}
+        countryChoice={handleChoice}
+        answer={data.name}
+      />
     </div>
   )
 }

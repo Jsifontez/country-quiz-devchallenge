@@ -10,7 +10,11 @@ function QuizList(props) {
     return (
       <ul className="quiz__list">
         {props.items.map(item =>
-          <ListItem text={item} key={item}/>
+          <ListItem
+            key={item}
+            text={item}
+            countryChoice={props.countryChoice}
+          />
         )}
       </ul>
     )

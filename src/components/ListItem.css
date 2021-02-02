@@ -23,3 +23,15 @@
   border-color: #F9A826;
   background-color: #F9A826;
 }
+
+.answer--correct, .answer--correct:hover {
+  color: white;
+  border-color: green;
+  background-color: green;
+}
+
+.answer--wrong, .answer--wrong:hover {
+  color: white;
+  border-color: red;
+  background-color: red;
+}
