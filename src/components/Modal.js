@@ -11,6 +11,7 @@ const Modal = (props) => {
   const [data, setData] = useState({name: '', capital: ''})
   const [options, setOptions] = useState([])
   const [showNextQuiz, setShowNextQuiz] = useState(false)
+  const [gameOver, setGameOver] = useState(false)
 
   useEffect(() => {
     if (query === false) return
@@ -60,12 +61,21 @@ const Modal = (props) => {
         listItems[i].classList.add("answer--correct")
       }
     }
+    setGameOver(true)
+    setGameMode("You loose")
   }
 
   const fetchNewQuiz = () => {
     setIsLoading(true)
     setQuery(true)
     setShowNextQuiz(false)
+  }
+
+  const tryAgain = () => {
+    setGameOver(false)
+    setGameMode("")
+    setData({name: '', capital: ''})
+    setOptions([])
   }
 
   return(
@@ -76,15 +86,27 @@ const Modal = (props) => {
         alt="A man with a world on the side"
         width="162px"
       />
-      <Quiz gameMode={gameMode} isLoading={isLoading} quiz={data} />
-      <QuizList
-        changeGameMode={changeGameMode}
-        items={options}
-        countryChoice={handleChoice}
-        answer={data.name}
-        fetchNewQuiz={fetchNewQuiz}
-        showNext={showNextQuiz}
+      <Quiz
+        quiz={data}
+        gameOver={gameOver}
+        gameMode={gameMode}
+        isLoading={isLoading}
       />
+      {gameOver &&
+        <div>
+          <button onClick={tryAgain}>Please Try Again</button>
+        </div>
+      }
+      {!gameOver &&
+        <QuizList
+          changeGameMode={changeGameMode}
+          items={options}
+          countryChoice={handleChoice}
+          answer={data.name}
+          fetchNewQuiz={fetchNewQuiz}
+          showNext={showNextQuiz}
+        />
+      }
     </div>
   )
 }
