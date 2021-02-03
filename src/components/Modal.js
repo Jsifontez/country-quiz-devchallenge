@@ -10,6 +10,7 @@ const Modal = (props) => {
   const [query, setQuery] = useState(false)
   const [data, setData] = useState({name: '', capital: ''})
   const [options, setOptions] = useState([])
+  const [showNextQuiz, setShowNextQuiz] = useState(false)
 
   useEffect(() => {
     if (query === false) return
@@ -45,6 +46,7 @@ const Modal = (props) => {
 
     if(choice === data.name) {
       el.classList.add("answer--correct")
+      setShowNextQuiz(true)
       return
     } else (
       el.classList.add("answer--wrong")
@@ -58,6 +60,12 @@ const Modal = (props) => {
         listItems[i].classList.add("answer--correct")
       }
     }
+  }
+
+  const fetchNewQuiz = () => {
+    setIsLoading(true)
+    setQuery(true)
+    setShowNextQuiz(false)
   }
 
   return(
@@ -74,6 +82,8 @@ const Modal = (props) => {
         items={options}
         countryChoice={handleChoice}
         answer={data.name}
+        fetchNewQuiz={fetchNewQuiz}
+        showNext={showNextQuiz}
       />
     </div>
   )

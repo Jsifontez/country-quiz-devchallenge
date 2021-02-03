@@ -6,17 +6,27 @@ import './QuizList.css'
 // a city is the capital of.. or a flag belong to country..
 
 function QuizList(props) {
+
+  const fetchNewQuiz = () => {
+    props.fetchNewQuiz()
+  }
+
   if(props.items.length) {
     return (
-      <ul className="quiz__list">
-        {props.items.map(item =>
-          <ListItem
-            key={item}
-            text={item}
-            countryChoice={props.countryChoice}
-          />
-        )}
-      </ul>
+      <>
+        <ul className="quiz__list">
+          {props.items.map(item =>
+            <ListItem
+              key={item}
+              text={item}
+              countryChoice={props.countryChoice}
+            />
+          )}
+        </ul>
+        {props.showNext &&
+          <button onClick={fetchNewQuiz}>Next</button>
+        }
+      </>
     )
   } else {
     return(
