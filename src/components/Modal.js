@@ -67,15 +67,17 @@ const Modal = (props) => {
 
   const fetchNewQuiz = () => {
     setIsLoading(true)
+    setData({name: '', capital: ''})
+    setOptions([])
     setQuery(true)
     setShowNextQuiz(false)
   }
 
   const tryAgain = () => {
-    setGameOver(false)
-    setGameMode("")
     setData({name: '', capital: ''})
     setOptions([])
+    setGameOver(false)
+    setGameMode("")
   }
 
   return(
