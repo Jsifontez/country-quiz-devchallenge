@@ -1,0 +1,48 @@
+.modal {
+  padding: 1.65em 2em 2em;
+  text-align: center;
+  border-radius: 1.5em;
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+}
+
+.result {
+  font-size: 2.5em;
+  margin-bottom: 0;
+  text-align: center;
+  color: hsl(212,44.7%,28.3%);
+}
+
+.text {
+  margin-top: 0;
+  color: hsl(212,44.7%,33.3%);
+}
+
+.text > span {
+  font-size: 2em;
+}
+
+.button {
+  width: 11em;
+  margin-top: 2em;
+  cursor: pointer;
+  height: 3.1111em;
+  font-weight: bold;
+  font-size: 1.125em;
+  border-radius: .5em;
+  background-color: white;
+  color: hsl(212,44.7%,28.3%);
+  border: 3px solid hsl(212,44.7%,28.3%);
+}
+
+.button:hover {
+  color: white;
+  border-color: white;
+  background-color: hsl(212,44.7%,33.3%);
+}
+
+.button:focus {
+  outline: dashed hsl(212,50%,33.3%);
+}
+

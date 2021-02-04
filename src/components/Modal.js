@@ -3,6 +3,7 @@ import QuizList from './QuizList'
 import Quiz from './Quiz'
 import './Modal.css'
 import randomCountry from '../utils/randomCountry'
+import Results from './Results'
 
 const Modal = (props) => {
   const [gameMode, setGameMode ] = useState("")
@@ -12,6 +13,7 @@ const Modal = (props) => {
   const [options, setOptions] = useState([])
   const [showNextQuiz, setShowNextQuiz] = useState(false)
   const [gameOver, setGameOver] = useState(false)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
 
   useEffect(() => {
     if (query === false) return
@@ -47,6 +49,7 @@ const Modal = (props) => {
 
     if(choice === data.name) {
       el.classList.add("answer--correct")
+      setCorrectAnswers(correctAnswers + 1)
       setShowNextQuiz(true)
       return
     } else (
@@ -62,7 +65,7 @@ const Modal = (props) => {
       }
     }
     setGameOver(true)
-    setGameMode("You loose")
+    setGameMode("Results")
   }
 
   const fetchNewQuiz = () => {
@@ -78,28 +81,25 @@ const Modal = (props) => {
     setOptions([])
     setGameOver(false)
     setGameMode("")
+    setCorrectAnswers(0)
   }
 
-  return(
-    <div className="modal">
-      <img
-        className="modal__img"
-        src="quiz_starting.svg"
-        alt="A man with a world on the side"
-        width="162px"
-      />
-      <Quiz
-        quiz={data}
-        gameOver={gameOver}
-        gameMode={gameMode}
-        isLoading={isLoading}
-      />
-      {gameOver &&
-        <div>
-          <button onClick={tryAgain}>Please Try Again</button>
-        </div>
-      }
-      {!gameOver &&
+  if (!gameOver) {
+    return (
+      <div className="modal">
+        <img
+          className="modal__img"
+          src="quiz_starting.svg"
+          alt="A man with a world on the side"
+          width="162px"
+        />
+        <Quiz
+          quiz={data}
+          gameOver={gameOver}
+          gameMode={gameMode}
+          isLoading={isLoading}
+        />
+
         <QuizList
           changeGameMode={changeGameMode}
           items={options}
@@ -108,9 +108,16 @@ const Modal = (props) => {
           fetchNewQuiz={fetchNewQuiz}
           showNext={showNextQuiz}
         />
-      }
-    </div>
-  )
+      </div>
+    )
+  } else {
+    return (
+      <Results
+        tryAgain={tryAgain}
+        answers={correctAnswers}
+      />
+    )
+  } 
 }
 
 export default Modal

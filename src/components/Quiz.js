@@ -5,7 +5,7 @@ function Quiz ({ gameMode, isLoading, quiz, gameOver }) {
   // like the first example of https://reactjs.org/docs/conditional-rendering.html
   let quizText
 
-  if (gameOver && gameMode === 'You loose') {
+  if (gameOver && gameMode === 'Results') {
     quizText = <h3 style={{textAlign:'center'}}>
       {gameMode}
     </h3>
