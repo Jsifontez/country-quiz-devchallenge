@@ -9,7 +9,7 @@ const Modal = (props) => {
   const [gameMode, setGameMode ] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [query, setQuery] = useState(false)
-  const [data, setData] = useState({name: '', capital: '', flagUrl:''})
+  const [data, setData] = useState({})
   const [options, setOptions] = useState([])
   const [showNextQuiz, setShowNextQuiz] = useState(false)
   const [gameOver, setGameOver] = useState(false)
@@ -70,54 +70,49 @@ const Modal = (props) => {
 
   const fetchNewQuiz = () => {
     setIsLoading(true)
-    setData({name: '', capital: ''})
+    setData({})
     setOptions([])
     setQuery(true)
     setShowNextQuiz(false)
   }
 
   const tryAgain = () => {
-    setData({name: '', capital: ''})
+    setData({})
     setOptions([])
     setGameOver(false)
     setGameMode("")
     setCorrectAnswers(0)
   }
 
-  if (!gameOver) {
-    return (
-      <div className="modal">
-        <img
-          className="modal__img"
-          src="quiz_starting.svg"
-          alt="A man with a world on the side"
-          width="162px"
-        />
-        <Quiz
-          quiz={data}
-          gameOver={gameOver}
-          gameMode={gameMode}
-          isLoading={isLoading}
-        />
+  if (gameOver) {
+    return <Results tryAgain={tryAgain} answers={correctAnswers} />
+  }
 
-        <QuizList
-          changeGameMode={changeGameMode}
-          items={options}
-          countryChoice={handleChoice}
-          answer={data.name}
-          fetchNewQuiz={fetchNewQuiz}
-          showNext={showNextQuiz}
-        />
-      </div>
-    )
-  } else {
-    return (
-      <Results
-        tryAgain={tryAgain}
-        answers={correctAnswers}
+  return (
+    <div className="modal">
+      <img
+        className="modal__img"
+        src="quiz_starting.svg"
+        alt="A man with a world on the side"
+        width="162px"
       />
-    )
-  } 
+      <Quiz
+        quiz={data}
+        gameOver={gameOver}
+        gameMode={gameMode}
+        isLoading={isLoading}
+      />
+
+      <QuizList
+        changeGameMode={changeGameMode}
+        items={options}
+        countryChoice={handleChoice}
+        answer={data.name}
+        fetchNewQuiz={fetchNewQuiz}
+        showNext={showNextQuiz}
+      />
+    </div>
+  )
 }
 
 export default Modal
