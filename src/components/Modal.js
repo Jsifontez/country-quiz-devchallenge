@@ -9,7 +9,7 @@ const Modal = (props) => {
   const [gameMode, setGameMode ] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [query, setQuery] = useState(false)
-  const [data, setData] = useState({name: '', capital: ''})
+  const [data, setData] = useState({name: '', capital: '', flagUrl:''})
   const [options, setOptions] = useState([])
   const [showNextQuiz, setShowNextQuiz] = useState(false)
   const [gameOver, setGameOver] = useState(false)
@@ -29,7 +29,7 @@ const Modal = (props) => {
         wrongCountries.push(countries[i].name)
       }
 
-      setData({name: countries[0].name, capital: countries[0].capital})
+      setData({name: countries[0].name, capital: countries[0].capital, flagUrl: countries[0].flag})
       setOptions([...wrongCountries])
       setQuery(false)
       setIsLoading(false)

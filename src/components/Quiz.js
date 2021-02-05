@@ -1,27 +1,23 @@
 import React from 'react'
+import CapitalQuiz from './CapitalQiz'
+import FlagQuiz from './FlagQuiz'
+import IsLoading from './IsLoading'
 
-function Quiz ({ gameMode, isLoading, quiz, gameOver }) {
-  // I need refactor quizText in two components
-  // like the first example of https://reactjs.org/docs/conditional-rendering.html
-  let quizText
+function Quiz ({ gameMode, isLoading, quiz}) {
 
-  if (gameOver && gameMode === 'Results') {
-    quizText = <h3 style={{textAlign:'center'}}>
-      {gameMode}
-    </h3>
-  } else {
-    quizText = <h3>
-      {gameMode === ""
-      ? `Select game mode`
-      : (isLoading
-          ? `Loading ${gameMode} of... quiz...`
-          : `${quiz.capital} is the capital of`
-        )
-      }
-    </h3>
+  if (isLoading) {
+    return <IsLoading mode={gameMode} isLoading={isLoading}/>
+  }
+  if (gameMode === "capital") {
+    return <CapitalQuiz capital={quiz.capital}/>
+  }
+  if (gameMode === "flag") {
+    return (
+      <FlagQuiz country={quiz.name} flag={quiz.flagUrl} />
+    )
   }
 
-  return quizText
+  return <h3>Select the game mode</h3>
 }
 
 export default Quiz
