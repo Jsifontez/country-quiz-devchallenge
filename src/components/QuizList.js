@@ -1,5 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
+import Spinner from './Spinner'
 
 import './QuizList.css'
 
@@ -9,6 +10,10 @@ function QuizList(props) {
 
   const fetchNewQuiz = () => {
     props.fetchNewQuiz()
+  }
+
+  if (props.loading) {
+    return <Spinner />
   }
 
   if(props.items.length) {

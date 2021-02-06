@@ -1,0 +1,18 @@
+.spinner__container {
+  display: flex;
+  justify-content: center;
+}
+
+.spinner {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 15px solid hsla(236.8, 54.4%, 59.6%, .6);
+  border-top-color: hsl(236.8, 54.4%, 59.6%);
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}

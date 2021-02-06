@@ -104,6 +104,7 @@ const Modal = (props) => {
       />
 
       <QuizList
+        loading={isLoading}
         changeGameMode={changeGameMode}
         items={options}
         countryChoice={handleChoice}
