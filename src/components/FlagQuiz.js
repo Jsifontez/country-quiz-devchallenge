@@ -1,5 +1,5 @@
 import React from 'react'
-import './FalgQuiz.css'
+import './FlagQuiz.css'
 
 const FlagQuiz = (props) => {
 
