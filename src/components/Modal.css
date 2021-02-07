@@ -26,15 +26,15 @@
 }
 
 .modal__button {
-  width: 116px;
-  height: 56px;
+  width: 7.25em;
+  height: 3.2778em;
   border: none;
   color:white;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 1.125em;
   font-weight: 700;
-  margin-top: 24px;
-  border-radius: 12px;
+  margin-top: 1.5em;
+  border-radius: .75em;
   background-color: #F9A826;
-  /* float: right; */
+  padding: 0;
 }
