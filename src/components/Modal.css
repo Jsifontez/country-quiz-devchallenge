@@ -5,6 +5,8 @@
   box-sizing: border-box;
   position: relative;
   background-color: white;
+  min-height: 20.5625em;
+  max-height: 35em;
 }
 
 .modal > h3 {
@@ -12,7 +14,7 @@
   font-size: 1.5em;
   font-weight: 700;
   line-height: 1.5em;
-  margin-bottom: 1.3334em;
+  margin-bottom: 0.3334em;
   text-align: justify;
   color: hsl(212,44.7%,33.3%);
 }
@@ -21,4 +23,18 @@
   position: absolute;
   right: 0;
   top: -4.6875em;
+}
+
+.modal__button {
+  width: 116px;
+  height: 56px;
+  border: none;
+  color:white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 24px;
+  border-radius: 12px;
+  background-color: #F9A826;
+  /* float: right; */
 }
