@@ -112,6 +112,9 @@ const Modal = (props) => {
         fetchNewQuiz={fetchNewQuiz}
         showNext={showNextQuiz}
       />
+      {showNextQuiz &&
+        <button className="modal__button" onClick={fetchNewQuiz}>Next</button>
+      }
     </div>
   )
 }

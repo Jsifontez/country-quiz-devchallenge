@@ -18,20 +18,15 @@ function QuizList(props) {
 
   if(props.items.length) {
     return (
-      <>
-        <ul className="quiz__list">
-          {props.items.map(item =>
-            <ListItem
-              key={item}
-              text={item}
-              countryChoice={props.countryChoice}
-            />
-          )}
-        </ul>
-        {props.showNext &&
-          <button onClick={fetchNewQuiz}>Next</button>
-        }
-      </>
+      <ul className="quiz__list">
+        {props.items.map(item =>
+          <ListItem
+            key={item}
+            text={item}
+            countryChoice={props.countryChoice}
+          />
+        )}
+      </ul>
     )
   } else {
     return(
