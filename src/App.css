@@ -7,8 +7,8 @@
 }
 
 .App {
-  width: 34.3449vw;
-  height: 76.523vh;
+  width: 25.778em;
+  height: min-content;
   position: relative;
   box-sizing: border-box;
 }
