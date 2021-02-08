@@ -3,12 +3,16 @@
   width: 22.2222em;
   height: 3.1111em;
   cursor: pointer;
+  padding: 0 18px;
   font-size: 1.125em;
-  line-height: 3.1111em;
+  box-sizing: border-box;
   margin-bottom: 1.3222em;
   border-radius: 0.6667em;
   color: hsla(236.8, 54.4%, 59.6%, .8);
   border: .1111em solid hsla(236.8, 54.4%, 59.6%, .7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;;
 }
 
 .list__item:first-child {
@@ -35,4 +39,16 @@
   color: white;
   border-color: red;
   background-color: red;
+}
+
+.option {
+  line-height: 2.223em;
+  width: 1.3888em;
+  height: 1.3888em;
+}
+
+.option__img {
+  display: none;
+  height: 1.3888em;
+  width: 1.3888em;
 }
