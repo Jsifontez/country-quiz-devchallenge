@@ -8,10 +8,6 @@ import './QuizList.css'
 
 function QuizList(props) {
 
-  const fetchNewQuiz = () => {
-    props.fetchNewQuiz()
-  }
-
   if (props.loading) {
     return <Spinner />
   }
