@@ -12,7 +12,8 @@
   border: .1111em solid hsla(236.8, 54.4%, 59.6%, .7);
   display: flex;
   justify-content: space-between;
-  align-items: center;;
+  align-items: center;
+  transition: all .4s;
 }
 
 .list__item:first-child {
@@ -29,16 +30,55 @@
   background-color: #F9A826;
 }
 
+.answer--delay {
+  color: white;
+  background-color: green;
+  transition-delay: .8s;
+  transition-duration: .2s;
+}
+
 .answer--correct, .answer--correct:hover {
   color: white;
   border-color: green;
   background-color: green;
+  animation: .8s blinkedCorrectBg linear 1 forwards;
+}
+
+@keyframes blinkedCorrectBg {
+  0%, 40%, 80% {
+    color: hsla(236.8, 54.4%, 59.6%, .8);
+    background-color: white;
+  }
+  20%, 60%, 90% {
+    color: white;
+    background-color: #F9A826;
+  }
+  100% {
+    color: white;
+    border-color: green;
+    background-color: green;
+  }
 }
 
 .answer--wrong, .answer--wrong:hover {
   color: white;
-  border-color: red;
-  background-color: red;
+  animation: .8s blinkedWrongBg linear 1 forwards;
+}
+
+@keyframes blinkedWrongBg {
+  0%, 40%, 80% {
+    color: hsla(236.8, 54.4%, 59.6%, .8);
+    background-color: white;
+  }
+  20%, 60%, 90% {
+    color: white;
+    background-color: #F9A826;
+  }
+  100% {
+    color: white;
+    border-color: red;
+    background-color: red;
+  }
 }
 
 .option {

@@ -49,23 +49,32 @@ const Modal = (props) => {
 
     if(choice === data.name) {
       el.classList.add("answer--correct")
-      setCorrectAnswers(correctAnswers + 1)
-      setShowNextQuiz(true)
+
+      window.setTimeout( () => {
+        setCorrectAnswers(correctAnswers + 1)
+        setShowNextQuiz(true)
+      }, 1000)
       return
-    } else (
-      el.classList.add("answer--wrong")
-    )
+    }
 
     // I need iterate over all list elements
     const listItems = el.parentElement.children
+    let correctAnswer
 
-    for (let i = 0; i < listItems.length; i++) {
-      if (listItems[i].innerHTML === data.name) {
-        listItems[i].classList.add("answer--correct")
+    for (let i = 0; i < 4; i++) {
+      if (listItems[i].innerText === data.name) {
+        correctAnswer = listItems[i]
       }
     }
-    setGameOver(true)
-    setGameMode("Results")
+
+    el.classList.add("answer--wrong")
+    correctAnswer.classList.add("answer--delay")
+
+
+    window.setTimeout( () => {
+      setGameOver(true)
+      setGameMode("Results")
+    }, 1400)
   }
 
   const fetchNewQuiz = () => {
