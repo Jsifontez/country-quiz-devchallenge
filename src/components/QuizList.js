@@ -20,6 +20,7 @@ function QuizList(props) {
             key={item}
             text={item}
             countryChoice={props.countryChoice}
+            isClickeable={props.isClickeable}
           />
         )}
       </ul>

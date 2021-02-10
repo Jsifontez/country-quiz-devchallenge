@@ -14,6 +14,7 @@ const Modal = (props) => {
   const [showNextQuiz, setShowNextQuiz] = useState(false)
   const [gameOver, setGameOver] = useState(false)
   const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [isClickeable, setIsClickeable] = useState(true)
 
   useEffect(() => {
     if (query === false) return
@@ -46,6 +47,7 @@ const Modal = (props) => {
 
   // a function to handle de correct choice in options
   const handleChoice = (choice, el) => {
+    setIsClickeable(false)
 
     if(choice === data.name) {
       el.classList.add("answer--correct")
@@ -78,6 +80,7 @@ const Modal = (props) => {
   }
 
   const fetchNewQuiz = () => {
+    setIsClickeable(true)
     setIsLoading(true)
     setData({})
     setOptions([])
@@ -91,6 +94,7 @@ const Modal = (props) => {
     setGameOver(false)
     setGameMode("")
     setCorrectAnswers(0)
+    setIsClickeable(true)
   }
 
   if (gameOver) {
@@ -119,7 +123,7 @@ const Modal = (props) => {
         countryChoice={handleChoice}
         answer={data.name}
         fetchNewQuiz={fetchNewQuiz}
-        showNext={showNextQuiz}
+        isClickeable={isClickeable}
       />
       {showNextQuiz &&
         <button className="modal__button" onClick={fetchNewQuiz}>Next</button>

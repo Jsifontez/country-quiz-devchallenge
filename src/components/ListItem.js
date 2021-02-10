@@ -1,16 +1,15 @@
 import React from 'react'
 import './ListItem.css'
 
-const ListItem = ({text, changeGameMode, gameMode, countryChoice}) => {
+const ListItem = ({text, changeGameMode, gameMode, countryChoice, isClickeable}) => {
   const handleChangeMode = () => {
     if(changeGameMode) {
       changeGameMode(gameMode)
     }
   }
   const handleChoice = (ev) => {
-    if(!changeGameMode) {
-      countryChoice(text, ev.target)
-    }
+    if (!isClickeable) return
+    countryChoice(text, ev.target)
   }
 
   if(changeGameMode){
