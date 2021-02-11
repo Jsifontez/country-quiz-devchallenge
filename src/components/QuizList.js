@@ -5,8 +5,6 @@ import GameModeList from './GameModeList'
 
 import './QuizList.css'
 
-// a city is the capital of.. or a flag belong to country..
-
 function QuizList(props) {
 
   if (props.loading) {

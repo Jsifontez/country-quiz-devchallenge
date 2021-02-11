@@ -1,15 +1,15 @@
 import React from 'react'
-import ListItem from './ListItem'
+import GameModeItem from './GameModeItem'
 
 const GameModeList = (props) => {
   return(
     <ul className="quiz__list">
-      <ListItem
+      <GameModeItem
         text="city is the capital of..."
         changeGameMode={props.changeGameMode}
         gameMode="capital"
       />
-      <ListItem
+      <GameModeItem
         text="flag belong to country..."
         changeGameMode={props.changeGameMode}
         gameMode="flag"

@@ -4,31 +4,13 @@ import './ListItem.css'
 const ListItem = (props) => {
   const {
     text,
-    gameMode,
-    changeGameMode,
     countryChoice,
     isClickeable
   } = props
 
-  const handleChangeMode = () => {
-    if(changeGameMode) {
-      changeGameMode(gameMode)
-    }
-  }
   const handleChoice = (ev) => {
     if (!isClickeable) return
     countryChoice(text, ev.target)
-  }
-
-  if(changeGameMode){
-    return(
-      <li
-        className="list__item"
-        onClick={handleChangeMode}
-      >
-        {text}
-      </li>
-    )
   }
 
   return(
