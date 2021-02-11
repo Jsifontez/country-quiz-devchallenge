@@ -1,7 +1,15 @@
 import React from 'react'
 import './ListItem.css'
 
-const ListItem = ({text, changeGameMode, gameMode, countryChoice, isClickeable}) => {
+const ListItem = (props) => {
+  const {
+    text,
+    gameMode,
+    changeGameMode,
+    countryChoice,
+    isClickeable
+  } = props
+
   const handleChangeMode = () => {
     if(changeGameMode) {
       changeGameMode(gameMode)
@@ -21,20 +29,20 @@ const ListItem = ({text, changeGameMode, gameMode, countryChoice, isClickeable})
         {text}
       </li>
     )
-  } else {
-    return(
-      <li
-        className="list__item"
-        onClick={handleChoice}
-      >
-        {text}
-        <span className="option">
-          <img className="option__img"  src="check_circle_outline-white-24dp.svg" alt="rounded checked icon" />
-          <img className="option__img"  src="close-black-24dp.svg" alt="X icon" />
-        </span>
-      </li>
-    )
   }
+
+  return(
+    <li
+      className="list__item"
+      onClick={handleChoice}
+    >
+      {text}
+      <span className="option">
+        <img className="option__img"  src="check_circle_outline-white-24dp.svg" alt="rounded checked icon" />
+        <img className="option__img"  src="close-black-24dp.svg" alt="X icon" />
+      </span>
+    </li>
+  )
 }
 
 export default ListItem
