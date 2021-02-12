@@ -45,6 +45,13 @@ const Modal = (props) => {
     setQuery(true)
   }
 
+  // call a new quiz after 2.5s
+  const callNewQuiz = () => {
+    window.setTimeout(() => {
+      fetchNewQuiz()
+    }, 2500)
+  }
+
   // a function to handle de correct choice in options
   const handleChoice = (choice, el) => {
     setIsClickeable(false)
@@ -53,13 +60,17 @@ const Modal = (props) => {
       el.classList.add("answer--correct")
 
       window.setTimeout( () => {
+
         setCorrectAnswers(correctAnswers + 1)
         setShowNextQuiz(true)
+        callNewQuiz()
+
       }, 1000)
+
       return
     }
 
-    // I need iterate over all list elements
+    // We need iterate over all list elements
     const listItems = el.parentElement.children
     let correctAnswer
 

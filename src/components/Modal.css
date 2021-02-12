@@ -37,4 +37,10 @@
   border-radius: .75em;
   background-color: #F9A826;
   padding: 0;
+  animation: 3s ease-out shadow forwards 1;
+}
+
+@keyframes shadow {
+  form { box-shadow: none;}
+  to { box-shadow: inset 8em 0 hsla(0, 0%, 40%, .3);}
 }
