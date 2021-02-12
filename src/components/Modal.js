@@ -30,6 +30,7 @@ const Modal = (props) => {
         wrongCountries.push(countries[i].name)
       }
 
+      shuffle(wrongCountries)
       setData({name: countries[0].name, capital: countries[0].capital, flagUrl: countries[0].flag})
       setOptions([...wrongCountries])
       setQuery(false)
@@ -43,6 +44,20 @@ const Modal = (props) => {
     setIsLoading(true)
     setGameMode(mode)
     setQuery(true)
+  }
+
+  const shuffle = countries => {
+    let count = countries.length, copy, i;
+
+    while (count) {
+      i = Math.floor(Math.random() * count--)
+
+      copy = countries[count]
+      countries[count] = countries[i]
+      countries[i] = copy
+    }
+
+    return countries
   }
 
   // call a new quiz after 2.5s
