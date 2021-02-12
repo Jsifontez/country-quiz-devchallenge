@@ -5,21 +5,10 @@
   box-sizing: border-box;
   position: relative;
   background-color: white;
-  min-height: 20.5625em;
 }
 
 .moda--flag {
   padding: 2.15em 2em 2em;
-}
-
-.modal > h3 {
-  margin: 0;
-  font-size: 1.5em;
-  font-weight: 700;
-  line-height: 1.5em;
-  margin-bottom: 0.3334em;
-  text-align: justify;
-  color: hsl(212,44.7%,33.3%);
 }
 
 .modal__img {

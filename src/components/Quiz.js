@@ -3,6 +3,8 @@ import CapitalQuiz from './CapitalQiz'
 import FlagQuiz from './FlagQuiz'
 import IsLoading from './IsLoading'
 
+import './Quiz.css'
+
 function Quiz ({ gameMode, isLoading, quiz}) {
 
   if (isLoading) {
@@ -17,7 +19,7 @@ function Quiz ({ gameMode, isLoading, quiz}) {
     )
   }
 
-  return <h3>Select the game mode</h3>
+  return <h3 className="quiz">Select the game mode</h3>
 }
 
 export default Quiz

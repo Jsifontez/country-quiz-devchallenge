@@ -4,7 +4,7 @@ import './FlagQuiz.css'
 const FlagQuiz = (props) => {
 
   return(
-    <h3>
+    <h3 className="quiz">
       <img className="flag-img" src={props.flag} alt={`${props.country} flag`}/>
       Which country does this flag belong to?
     </h3>

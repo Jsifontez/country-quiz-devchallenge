@@ -12,6 +12,7 @@
 
 .App {
   width: 25.778em;
+  max-width: 90vw;
   height: min-content;
   position: relative;
   box-sizing: border-box;
