@@ -4,9 +4,10 @@
   height: 3.1111em;
   cursor: pointer;
   padding: 0 18px;
+  text-align: left;
   font-size: 1.125em;
   box-sizing: border-box;
-  margin-bottom: 1.3222em;
+  margin-bottom: 0.9222em;
   border-radius: 0.6667em;
   color: hsla(236.8, 54.4%, 59.6%, .8);
   border: .1111em solid hsla(236.8, 54.4%, 59.6%, .7);
@@ -17,7 +18,7 @@
 }
 
 .list__item:first-child {
-  margin-bottom: 1.3889em;
+  margin-bottom: 0.989em;
 }
 
 .list__item:last-child {

@@ -1,11 +1,15 @@
 .modal {
-  padding: 4.25em 2em 3em;
+  padding: 3.45em 2em 2em;
   text-align: center;
   border-radius: 1.5em;
   box-sizing: border-box;
   position: relative;
   background-color: white;
   min-height: 20.5625em;
+}
+
+.moda--flag {
+  padding: 2.15em 2em 2em;
 }
 
 .modal > h3 {

@@ -128,7 +128,7 @@ const Modal = (props) => {
   }
 
   return (
-    <div className="modal">
+    <div className={`modal ${gameMode === "flag" ? "moda--flag": ""}`}>
       <img
         className="modal__img"
         src="quiz_starting.svg"
