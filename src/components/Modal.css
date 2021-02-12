@@ -36,3 +36,29 @@
   form { box-shadow: none;}
   to { box-shadow: inset 8em 0 hsla(0, 0%, 40%, .3);}
 }
+
+@media screen and (width <= 450px) {
+  .app__container {
+    padding: 1em 0;
+  }
+
+  h1 {
+    font-size: 1.6778em;
+  }
+
+  .modal__img {
+    top: -2.687em;
+    width: 7.2222em;
+  }
+
+  .quiz {
+    text-align: left;
+    font-size: 1.3em;
+  }
+
+  .spinner {
+    width: 4em;
+    height: 4em;
+    border-width: 10px;
+  }
+}
