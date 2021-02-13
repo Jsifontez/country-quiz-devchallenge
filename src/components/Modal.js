@@ -15,6 +15,7 @@ const Modal = (props) => {
   const [gameOver, setGameOver] = useState(false)
   const [correctAnswers, setCorrectAnswers] = useState(0)
   const [isClickeable, setIsClickeable] = useState(true)
+  const [timeoutId, setTimeoutId] = useState('')
 
   useEffect(() => {
     if (query === false) return
@@ -62,9 +63,9 @@ const Modal = (props) => {
 
   // call a new quiz after 2.5s
   const callNewQuiz = () => {
-    window.setTimeout(() => {
+    setTimeoutId(window.setTimeout(() => {
       fetchNewQuiz()
-    }, 2500)
+    }, 2500))
   }
 
   // a function to handle de correct choice in options
@@ -106,6 +107,7 @@ const Modal = (props) => {
   }
 
   const fetchNewQuiz = () => {
+    window.clearTimeout(timeoutId)
     setIsClickeable(true)
     setIsLoading(true)
     setData({})
