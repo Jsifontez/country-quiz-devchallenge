@@ -2,10 +2,27 @@ import React from 'react'
 import ListItem from './ListItem'
 import Spinner from './Spinner'
 import GameModeList from './GameModeList'
+import { motion } from 'framer-motion'
 
 import './QuizList.css'
 
 function QuizList(props) {
+
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 1
+      }
+    },
+    hidden: { 
+      pacity: 0,
+      transition: {
+        when: "afterChildren"
+      }
+    }
+  }
 
   if (props.loading) {
     return <Spinner />
@@ -13,7 +30,12 @@ function QuizList(props) {
 
   if(props.items.length) {
     return (
-      <ul className="quiz__list">
+      <motion.ul
+        className="quiz__list"
+        initial="hidden"
+        animate="visible"
+        variants={list}
+      >
         {props.items.map(item =>
           <ListItem
             key={item}
@@ -22,7 +44,7 @@ function QuizList(props) {
             isClickeable={props.isClickeable}
           />
         )}
-      </ul>
+      </motion.ul>
     )
   }
 
