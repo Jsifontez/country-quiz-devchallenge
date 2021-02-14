@@ -4,6 +4,7 @@ import Quiz from './Quiz'
 import './Modal.css'
 import Results from './Results'
 import useFetch from '../utils/useFetch'
+import { motion, AnimatePresence }from 'framer-motion'
 
 const Modal = (props) => {
   const [gameMode, setGameMode ] = useState("")
@@ -86,37 +87,53 @@ const Modal = (props) => {
   }
 
   if (gameOver) {
-    return <Results tryAgain={tryAgain} answers={correctAnswers} />
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        exit={{ opacity: 0}}
+      >
+        <Results tryAgain={tryAgain} answers={correctAnswers} />
+      </motion.div>
+    )
   }
 
   return (
-    <div className={`modal ${gameMode === "flag" ? "moda--flag": ""}`}>
-      <img
-        className="modal__img"
-        src="quiz_starting.svg"
-        alt="A man with a world on the side"
-        width="162px"
-      />
-      <Quiz
-        quiz={data}
-        gameOver={gameOver}
-        gameMode={gameMode}
-        isLoading={isLoading}
-      />
+    <AnimatePresence>
+      <motion.div
+        className={`modal ${gameMode === "flag" ? "moda--flag": ""}`}
+        key="modal"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        exit={{ opacity: 0}}
+      >
+        <img
+          className="modal__img"
+          src="quiz_starting.svg"
+          alt="A man with a world on the side"
+          width="162px"
+        />
+        <Quiz
+          quiz={data}
+          gameOver={gameOver}
+          gameMode={gameMode}
+          isLoading={isLoading}
+        />
 
-      <QuizList
-        loading={isLoading}
-        changeGameMode={changeGameMode}
-        items={options}
-        countryChoice={handleChoice}
-        answer={data.name}
-        fetchNewQuiz={fetchNewQuiz}
-        isClickeable={isClickeable}
-      />
-      {showNextQuiz &&
-        <button className="modal__button" onClick={fetchNewQuiz}>Next</button>
-      }
-    </div>
+        <QuizList
+          loading={isLoading}
+          changeGameMode={changeGameMode}
+          items={options}
+          countryChoice={handleChoice}
+          answer={data.name}
+          fetchNewQuiz={fetchNewQuiz}
+          isClickeable={isClickeable}
+        />
+        {showNextQuiz &&
+          <button className="modal__button" onClick={fetchNewQuiz}>Next</button>
+        }
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
