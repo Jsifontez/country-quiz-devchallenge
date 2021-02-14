@@ -1,11 +1,16 @@
 import React from 'react'
 import './Spinner.css'
+import { motion } from "framer-motion"
 
 const Spinner = () => {
   return(
-    <div className="spinner__container">
+    <motion.div
+      className="spinner__container"
+      initial={{opacity: 0}}
+      animate={{ opacity: 1}}
+    >
       <div className="spinner"></div>
-    </div>
+    </motion.div>
   )
 }
 
