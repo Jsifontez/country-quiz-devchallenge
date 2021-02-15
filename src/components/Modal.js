@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import QuizList from './QuizList'
 import Quiz from './Quiz'
 import './Modal.css'
@@ -14,12 +14,6 @@ const Modal = (props) => {
   const [correctAnswers, setCorrectAnswers] = useState(0)
   const [isClickeable, setIsClickeable] = useState(true)
   const [timeoutId, setTimeoutId] = useState('')
-
-  useEffect( () => {
-    if (options.length < 4 || data.capital === "") {
-      setIsLoading(false)
-    }
-  }, [options, data])
 
   const changeGameMode = (mode) => {
     setIsLoading(true)

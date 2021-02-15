@@ -25,11 +25,15 @@ const useFetch = (loading) => {
       for (let i = 0; i < countries.length; i++) {
         wrongCountries.push(countries[i].name)
       }
-
       shuffle(wrongCountries)
       setData({name: countries[0].name, capital: countries[0].capital, flagUrl: countries[0].flag})
       setOptions([...wrongCountries])
       setIsLoading(false)
+
+      // refetching if capital is empty
+      if ('capital' in data === "") {
+        fetchData()
+      }
     }
 
     fetchData()
