@@ -1,6 +1,6 @@
 .app__container {
   display: flex;
-  padding: 2em 0;
+  padding: 1.5em 0 .5em;
   min-height: 100vh;
   position: relative;
   align-items: center;
@@ -20,7 +20,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(94vh - 90px);
+  min-height: calc(94vh - 60px);
 }
 
 h1 {
@@ -53,7 +53,6 @@ h1 {
 }
 
 .footer > p > a:hover {
-  /* color: blue; */
   background-color: white;
   text-decoration: none;
   border-radius: 2.5px;;
