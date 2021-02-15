@@ -1,6 +1,6 @@
 const COUNTRIES = ["AFG", "ALA", "ALB", "DZA", "ASM", "AND", "AGO", "AIA", "ATA", "ATG",
   "ARG", "ARM", "ABW", "AUS", "AUT", "AZE", "BHS", "BHR", "BGD", "BRB", "BLR", "BEL",
-  "BLZ", "BEN", "BMU", "BTN", "BOL", "BES", "BIH", "BWA", "BVT", "BRA", "IOT", "BRN",
+  "BLZ", "BEN", "BMU", "BTN", "BOL", "BES", "BIH", "BWA", "BRA", "IOT", "BRN",
   "BGR", "BFA", "BDI", "CPV", "KHM", "CMR", "CAN", "CYM", "CAF", "TCD", "CHL", "CHN",
   "CXR", "CCK", "COL", "COM", "COG", "COD", "COK", "CRI", "CIV", "HRV", "CUB", "CUW",
   "CYP", "CZE", "DNK", "DJI", "DMA", "DOM", "ECU", "EGY", "SLV", "GNQ", "ERI", "EST",
@@ -26,5 +26,15 @@ export default function randomCountry() {
     const random = Math.floor(Math.random() * (COUNTRIES.length - 1))
     multipleCountries.push(COUNTRIES[random])
   }
+  if (isAnyCodeRepeat(multipleCountries)) {
+    randomCountry()
+  }
   return multipleCountries
+}
+
+function isAnyCodeRepeat (countries) {
+  for (let i = 0; i < countries.length ; i++) {
+    if (i === countries.length - 1) return false
+    return countries.includes(countries[i], i+1)
+  }
 }
