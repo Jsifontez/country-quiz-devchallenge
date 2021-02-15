@@ -1,7 +1,7 @@
 .list__item {
   max-width: 100%;
   width: 22.2222em;
-  height: 3.1111em;
+  min-height: 3.1111em;
   cursor: pointer;
   padding: 0 18px;
   text-align: left;
