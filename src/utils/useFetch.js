@@ -26,14 +26,9 @@ const useFetch = (loading) => {
         wrongCountries.push(countries[i].name)
       }
       shuffle(wrongCountries)
-      setData({name: countries[0].name, capital: countries[0].capital, flagUrl: countries[0].flag})
+      setData({name: countries[1].name, capital: countries[1].capital, flagUrl: countries[1].flag})
       setOptions([...wrongCountries])
       setIsLoading(false)
-
-      // refetching if capital is empty
-      if ('capital' in data === "") {
-        fetchData()
-      }
     }
 
     fetchData()
