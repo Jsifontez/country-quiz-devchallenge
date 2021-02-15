@@ -88,5 +88,5 @@ $ npm start
 ## Contact
 
 - Website [Portfolio](https://juansifontez.netlify.app)
-- GitHub [@jsifontez](https://{github.com/Jsifontez})
-- Twitter [@jsifontez_](https://{twitter.com/jsifontez_})
+- GitHub [@jsifontez](https://github.com/Jsifontez)
+- Twitter [@jsifontez_](https://twitter.com/jsifontez_)
