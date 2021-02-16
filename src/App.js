@@ -10,7 +10,7 @@ function App() {
       </main>
       <footer className="footer">
         <p>
-          Made with ❤️ by <a href="https://twitter.com/jsifontez_" target="_blank" rel="noreferrer">@jsifontez</a>
+          Code with ❤️ by <a href="https://twitter.com/jsifontez_" target="_blank" rel="noreferrer">@jsifontez</a>
         </p>
         <p>
           Commits are welcome on <a href="https://github.com/Jsifontez/country-quiz-devchallenge" target="_blank" rel="noreferrer">GitHub</a>
