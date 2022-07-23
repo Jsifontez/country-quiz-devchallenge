@@ -17,17 +17,18 @@ const useFetch = (loading) => {
 
     const fetchData = async () => {
       const CODES = randomCountry()
-      const URL = `https://restcountries.eu/rest/v2/alpha?codes=${CODES[0]};${CODES[1]};${CODES[2]};${CODES[3]}`
+      const URL = `https://restcountries.com/v3.1/alpha?codes=${CODES.join(',')}`
       const res = await fetch(URL)
       const countries = await res.json()
 
       const wrongCountries = []
       for (let i = 0; i < countries.length; i++) {
-        wrongCountries.push(countries[i].name)
+        wrongCountries.push(countries[i].name.common)
       }
       shuffle(wrongCountries)
-      setData({name: countries[1].name, capital: countries[1].capital, flagUrl: countries[1].flag})
+      setData({name: countries[1].name.common, capital: countries[1].capital, flagUrl: countries[1].flag})
       setOptions([...wrongCountries])
+
       setIsLoading(false)
     }
 
