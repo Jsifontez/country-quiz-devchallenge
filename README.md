@@ -39,7 +39,7 @@
 
 ![screenshot](https://github.com/Jsifontez/country-quiz-devchallenge/blob/main/public/country-quiz.gif)
 
-Hi, :wave: this was a challenge proposed on the page [devchallenges](https://devchallenges.io), the challenge was to create a minigame with the [REST countries API](https://restcountries.eu/).
+Hi, :wave: this was a challenge proposed on the page [devchallenges](https://devchallenges.io), the challenge was to create a minigame with the [REST countries API](https://restcountries.com/).
 
 At first I thought: how am I going to start this? Then I began to divide everything into small problems that would help me complete the goal. Performing step by step until completing the challenge.
 
