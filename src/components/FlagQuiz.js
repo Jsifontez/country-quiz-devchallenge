@@ -10,7 +10,7 @@ const FlagQuiz = (props) => {
       initial={{x:50, opacity:0}}
       animate={{x:0, opacity:1}}
     >
-      <img className="flag-img" src={props.flag} alt={`${props.country} flag`}/>
+      <img className="flag-img" src={props.flag} alt='Some country flag'/>
       Which country does this flag belong to?
     </motion.h3>
   )
