@@ -26,7 +26,7 @@ const useFetch = (loading) => {
         wrongCountries.push(countries[i].name.common)
       }
       shuffle(wrongCountries)
-      setData({name: countries[1].name.common, capital: countries[1].capital, flagUrl: countries[1].flag})
+      setData({name: countries[1].name.common, capital: countries[1].capital, flagUrl: countries[1].flags.png})
       setOptions([...wrongCountries])
 
       setIsLoading(false)
